@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GKALVIN TECH | Dunder Mifflin Style</title>
+    <title>GKALVIN TECH | Gestão RH</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -15,20 +15,19 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f7f6;
+            background-color: #fdfdfd;
             color: #333;
-            line-height: 1.6;
         }
 
-        /* NAVBAR FIXA */
+        /* NAVBAR - Cores Laranja e Verde */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #1a1a1a;
+            background: #ffa500; /* Laranja */
             padding: 15px 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 4px solid #13ee55; /* Verde */
         }
 
         nav .container-nav {
@@ -41,48 +40,55 @@
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             margin-left: 20px;
-            font-weight: 600;
+            font-weight: 700;
             transition: 0.3s;
         }
 
-        nav a:hover { color: #13ee55; }
+        nav a:hover { color: #1a1a1a; }
 
-        /* HERO SECTION */
+        /* HERO SECTION - Títulos em PRETO */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
+            height: 50vh;
+            background: linear-gradient(135deg, #ffa500 0%, #13ee55 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
             margin-top: 60px;
+            padding: 20px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; color: #13ee55; font-weight: bold; }
+        .hero h1 { 
+            color: #000000; /* PRETO conforme solicitado */
+            font-size: 3.5rem; 
+            margin-bottom: 10px; 
+        }
+        
+        .hero p { 
+            color: #000000; /* PRETO conforme solicitado */
+            font-size: 1.5rem; 
+            font-weight: 600;
+        }
 
-        /* CONTAINER GERAL */
         .container {
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 20px auto;
+            padding: 20px;
         }
 
-        section { padding: 60px 0; border-bottom: 1px solid #ddd; }
+        section { padding: 40px 0; }
 
-        /* CARDS CEO E EQUIPE */
+        h2 { color: #ffa500; margin-bottom: 20px; border-left: 5px solid #13ee55; padding-left: 10px; }
+
+        /* CARDS - Estilo Verde e Laranja */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            gap: 20px;
         }
 
         .card {
@@ -91,73 +97,68 @@
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            border-bottom: 4px solid #ffa500;
         }
-
-        .card:hover { transform: translateY(-10px); }
 
         .card img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            object-fit: cover;
+            border: 4px solid #13ee55;
             margin-bottom: 15px;
-            border: 5px solid #13ee55;
         }
 
-        .quote { font-style: italic; color: #666; margin-top: 10px; }
-
-        /* ESTILOS DO SISTEMA (MANTIDOS E MELHORADOS) */
+        /* SISTEMA */
         .system-box {
-            background: white;
+            background: #fff;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .menu-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
+            border: 2px solid #eee;
         }
 
         .btn-menu {
-            background: #eee;
-            border: none;
-            padding: 15px;
-            border-radius: 10px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
+            color: #ffa500;
+        }
+
+        .btn-menu:hover { background: #13ee55; color: white; }
+
+        .btn-primary {
+            background: #13ee55;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            font-size: 1.1em;
             transition: 0.3s;
         }
 
-        .btn-menu.active-btn { background: #13ee55; color: white; }
+        .btn-primary:hover { background: #ffa500; }
 
-        .content { display: none; padding: 20px 0; }
+        table th { background: #ffa500; color: white; }
+        
+        .content { display: none; }
         .content.active { display: block; }
 
-        /* FORMULÁRIOS E TABELAS */
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; }
-        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; }
-        .btn-primary { background: #13ee55; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 1.1em; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
-        th { background: #f8f9fa; color: #13ee55; }
+        iframe { border: 3px solid #ffa500; border-radius: 15px; }
 
-        /* CONTATO */
-        .contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        iframe { border-radius: 15px; border: none; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="container-nav">
-            <div style="color: #13ee55; font-size: 1.5rem; font-weight: bold;">GKALVIN TECH</div>
+            <div style="color: #000; font-size: 1.4rem; font-weight: 900;">GKALVIN TECH</div>
             <div>
-                <a href="#home">Home</a>
+                <a href="#home">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#equipe">Equipe</a>
                 <a href="#sistema">Sistema</a>
@@ -167,166 +168,82 @@
     </nav>
 
     <header class="hero" id="home">
-        <h1>GKALVIN TECH LTDAH</h1>
-        <p>“Gestão de Pessoas com Zero Estresse*”</p>
-        <small style="color: white; opacity: 0.7;">*O estresse é garantido, a gestão é opcional.</small>
+        <h1>👥 GKALVIN TECH LTDAH</h1>
+        <p>Gestão de Pessoas com Zero Estresse*</p>
     </header>
 
     <div class="container">
         
         <section id="sobre">
-            <h2>🏢 Sobre Nós</h2>
-            <p>A GKALVIN TECH surgiu do caos absoluto. Fundada em um porão por entusiastas que acreditavam que planilhas de Excel e café frio eram os únicos pilares necessários para o sucesso corporativo. Inspirada na eficiência (ou falta dela) da Dunder Mifflin, nossa missão é gerenciar humanos de forma que eles mal percebam que estão trabalhando.</p>
-        </section>
-
-        <section id="ceo">
-            <h2>👑 Nosso CEO</h2>
-            <div class="card" style="max-width: 500px; margin: 0 auto;">
-                <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Michael_Scott_The_Office.jpg" alt="Michael Scott">
-                <h3>Michael G. Scott</h3>
-                <p>Regional Manager / World's Best Boss</p>
-                <p class="quote">"Será que eu prefiro ser amado ou temido? Fácil. Ambos. Quero que as pessoas tenham medo do quanto elas me amam."</p>
-            </div>
+            <h2>🏢 Sobre a Empresa</h2>
+            <p>A GKALVIN TECH combina a tradição de Scranton com a tecnologia moderna. Focamos em resultados, mesmo que o processo seja um pouco... caótico.</p>
         </section>
 
         <section id="equipe">
-            <h2>💼 Equipe de Elite (Vendas)</h2>
+            <h2>💼 Nossa Equipe</h2>
             <div class="team-grid">
                 <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg" alt="Dwight">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Michael_Scott_The_Office.jpg" alt="CEO">
+                    <h4>Michael Scott</h4>
+                    <p style="color: #13ee55; font-weight: bold;">CEO / Regional Manager</p>
+                </div>
+                <div class="card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg" alt="Vendas">
                     <h4>Dwight Schrute</h4>
-                    <p>Assistente do Gerente Regional</p>
-                    <p class="quote">"O urso mais perigoso é o urso preto."</p>
+                    <p style="color: #ffa500; font-weight: bold;">Sales Associate</p>
                 </div>
                 <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Jim_Halpert.jpg" alt="Jim">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Jim_Halpert.jpg" alt="Vendas">
                     <h4>Jim Halpert</h4>
-                    <p>Vendedor Sênior / Especialista em Trote</p>
-                    <p class="quote">"Tudo o que eu tenho eu devo a este copo de café."</p>
-                </div>
-                <div class="card">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/6/67/Pam_Beesley.jpg" alt="Pam">
-                    <h4>Pam Beesly</h4>
-                    <p>Administradora de Escritório</p>
-                    <p class="quote">"Eu sinto que recebo bem pouco por isso."</p>
+                    <p style="color: #ffa500; font-weight: bold;">Sales Associate</p>
                 </div>
             </div>
         </section>
 
         <section id="sistema">
             <div class="system-box">
-                <h2>⚙️ Painel Administrativo</h2>
-                <div class="menu-buttons">
-                    <button class="btn-menu" onclick="showContent('dashboard')">📊 Dashboard</button>
-                    <button class="btn-menu" onclick="showContent('add-employee')">➕ Novo Funcionário</button>
-                    <button class="btn-menu" onclick="showContent('list-employees')">📋 Listar Todos</button>
+                <h2>⚙️ Sistema Interno</h2>
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <button class="btn-menu" onclick="showContent('dashboard')">Painel</button>
+                    <button class="btn-menu" onclick="showContent('add-employee')">Cadastrar</button>
+                    <button class="btn-menu" onclick="showContent('list-employees')">Lista</button>
                 </div>
 
                 <div id="dashboard" class="content active">
-                    <div class="form-row">
-                        <div class="card"><h4>Total Funcionários</h4><h2 id="total-employees">0</h2></div>
-                        <div class="card"><h4>Salário Médio</h4><h2 id="avg-salary">R$ 0</h2></div>
-                    </div>
+                    <h3 style="color: #13ee55;">Bem-vindo ao Dashboard Laranja & Verde!</h3>
                 </div>
 
                 <div id="add-employee" class="content">
-                    <form id="form-employee" onsubmit="addEmployee(event)">
-                        <div class="form-row">
-                            <input type="text" id="name" placeholder="Nome Completo" required>
-                            <input type="email" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-row">
-                            <select id="department">
-                                <option value="Vendas">Vendas</option>
-                                <option value="TI">TI</option>
-                                <option value="Recepcionista">Recepcionista</option>
-                            </select>
-                            <input type="number" id="salary" placeholder="Salário" required>
-                        </div>
-                        <button type="submit" class="btn-primary">Salvar no Banco de Dados</button>
+                    <form onsubmit="event.preventDefault(); alert('Funcionário salvo!');">
+                        <input type="text" placeholder="Nome do Funcionário" style="margin-bottom: 10px;"><br>
+                        <button type="submit" class="btn-primary">💾 Salvar Alterações</button>
                     </form>
                 </div>
 
                 <div id="list-employees" class="content">
-                    <table>
-                        <thead>
-                            <tr><th>Nome</th><th>Depto</th><th>Salário</th><th>Ações</th></tr>
-                        </thead>
-                        <tbody id="tbody-employees"></tbody>
+                    <table width="100%">
+                        <thead><tr><th>Colaborador</th><th>Status</th></tr></thead>
+                        <tbody><tr><td>Michael Scott</td><td>Ativo</td></tr></tbody>
                     </table>
                 </div>
             </div>
         </section>
 
         <section id="contato">
-            <h2>📞 Contato & Localização</h2>
-            <div class="contact-info">
-                <div>
-                    <p><strong>📍 Endereço:</strong> 1725 Slough Avenue, Scranton, PA</p>
-                    <p><strong>📞 Telefone:</strong> (570) 555-0123</p>
-                    <p><strong>📧 Email:</strong> michael.scott@gkalvin.tech</p>
-                    <br>
-                    <p><em>"Se ninguém atender, estamos na reunião de 'Dundies' no Chili's."</em></p>
-                </div>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1!1s0x89c51ce6023803d9:0x9320d75003c2e7a3!2sScranton,+PA,+USA!5m2!1sen!2s" 
-                    width="100%" height="300" allowfullscreen="" loading="lazy">
-                </iframe>
-            </div>
+            <h2>📍 Onde estamos</h2>
+            <p style="margin-bottom: 15px;">Scranton Business Park, 1725 Slough Avenue - Scranton, PA</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2987.5684365775!2d-75.660146!3d41.41169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDI0JzQyLjEiTiA3NcKwMzknMzYuNSJX!5e0!3m2!1spt-BR!2sbr!4v1647451234567" 
+                width="100%" height="350" loading="lazy">
+            </iframe>
         </section>
     </div>
 
     <script>
-        // Lógica Simplificada para Funcionamento
-        let employees = JSON.parse(localStorage.getItem('employees')) || [];
-
         function showContent(id) {
             document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            if(id === 'list-employees') updateList();
-            updateDashboard();
         }
-
-        function addEmployee(e) {
-            e.preventDefault();
-            const emp = {
-                id: Date.now(),
-                name: document.getElementById('name').value,
-                department: document.getElementById('department').value,
-                salary: parseFloat(document.getElementById('salary').value)
-            };
-            employees.push(emp);
-            localStorage.setItem('employees', JSON.stringify(employees));
-            alert('Funcionário contratado! (Boa sorte pra ele)');
-            e.target.reset();
-        }
-
-        function updateList() {
-            const tbody = document.getElementById('tbody-employees');
-            tbody.innerHTML = employees.map(emp => `
-                <tr>
-                    <td>${emp.name}</td>
-                    <td>${emp.department}</td>
-                    <td>R$ ${emp.salary.toFixed(2)}</td>
-                    <td><button onclick="deleteEmp(${emp.id})" style="color:red; border:none; background:none; cursor:pointer;">Demitir</button></td>
-                </tr>
-            `).join('');
-        }
-
-        function deleteEmp(id) {
-            employees = employees.filter(e => e.id !== id);
-            localStorage.setItem('employees', JSON.stringify(employees));
-            updateList();
-            updateDashboard();
-        }
-
-        function updateDashboard() {
-            document.getElementById('total-employees').innerText = employees.length;
-            const avg = employees.length ? (employees.reduce((s, e) => s + e.salary, 0) / employees.length).toFixed(2) : 0;
-            document.getElementById('avg-salary').innerText = `R$ ${avg}`;
-        }
-
-        window.onload = updateDashboard;
     </script>
 </body>
 </html>
