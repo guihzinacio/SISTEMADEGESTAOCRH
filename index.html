@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GKALVIN TECH | Gestão RH</title>
+    <title>GKALVIN TECH | Gestão RH - Cores Vibrantes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -15,11 +15,19 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdfdfd;
+            /* FUNDO DA PÁGINA COM GRADIENTE LARANJA E VERDE */
+            background: linear-gradient(135deg, #ffcc80 0%, #a5d6a7 100%);
             color: #333;
+            min-height: 100vh;
         }
 
-        /* NAVBAR - Cores Laranja e Verde */
+        /* TÍTULOS GERAIS EM PRETO */
+        h1, h2, h3, h4 {
+            color: #000000 !important;
+            font-weight: 800;
+        }
+
+        /* NAVBAR - Mantendo cores Laranja e Verde */
         nav {
             position: fixed;
             top: 0;
@@ -28,6 +36,7 @@
             padding: 15px 0;
             z-index: 1000;
             border-bottom: 4px solid #13ee55; /* Verde */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         nav .container-nav {
@@ -47,108 +56,162 @@
             transition: 0.3s;
         }
 
-        nav a:hover { color: #1a1a1a; }
+        nav a:hover { color: #000; }
 
-        /* HERO SECTION - Títulos em PRETO */
+        /* HERO SECTION - Fundo transparente para mostrar o gradiente do body */
         .hero {
-            height: 50vh;
-            background: linear-gradient(135deg, #ffa500 0%, #13ee55 100%);
+            height: 40vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 80px; /* Desconto da Nav */
             padding: 20px;
         }
 
         .hero h1 { 
-            color: #000000; /* PRETO conforme solicitado */
             font-size: 3.5rem; 
             margin-bottom: 10px; 
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5); /* Sombra leve para destacar no fundo */
         }
         
         .hero p { 
-            color: #000000; /* PRETO conforme solicitado */
+            color: #000000;
             font-size: 1.5rem; 
             font-weight: 600;
         }
 
+        /* CONTAINERS - Brancos para contraste e leitura */
         .container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 0 auto;
             padding: 20px;
         }
 
-        section { padding: 40px 0; }
+        section { 
+            padding: 40px; 
+            background: rgba(255, 255, 255, 0.9); /* Branco levemente transparente */
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 8px solid #ffa500; /* Detalhe Laranja */
+        }
 
-        h2 { color: #ffa500; margin-bottom: 20px; border-left: 5px solid #13ee55; padding-left: 10px; }
+        h2 { 
+            margin-bottom: 20px; 
+            border-bottom: 3px solid #13ee55; /* Detalhe Verde */
+            padding-bottom: 10px;
+            display: inline-block;
+        }
 
         /* CARDS - Estilo Verde e Laranja */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
+            margin-top: 20px;
         }
 
         .card {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-bottom: 4px solid #ffa500;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 2px solid #eee;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ffa500;
         }
 
         .card img {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 4px solid #13ee55;
+            border: 5px solid #13ee55;
             margin-bottom: 15px;
+            object-fit: cover;
         }
 
-        /* SISTEMA */
+        /* SISTEMA E FORMULÁRIOS */
         .system-box {
             background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        .btn-menu {
+        .tab-menu {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .btn-tab {
             background: #f0f0f0;
             border: 1px solid #ddd;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            color: #ffa500;
-        }
-
-        .btn-menu:hover { background: #13ee55; color: white; }
-
-        .btn-primary {
-            background: #13ee55;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            font-size: 1.1em;
+            color: #555;
             transition: 0.3s;
         }
 
-        .btn-primary:hover { background: #ffa500; }
+        .btn-tab:hover, .btn-tab.active-tab { 
+            background: #13ee55; /* Verde */
+            color: white;
+            border-color: #13ee55;
+        }
 
-        table th { background: #ffa500; color: white; }
+        .form-group { margin-bottom: 15px; }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #ffa500;
+        }
+
+        .btn-primary {
+            background: #ffa500; /* Laranja */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-primary:hover { background: #e69500; }
+
+        /* TABELA */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        table th { background: #13ee55; color: white; padding: 12px; text-align: left; }
+        table td { padding: 12px; border-bottom: 1px solid #eee; background: #fff; }
         
         .content { display: none; }
-        .content.active { display: block; }
+        .content.active { display: block; animation: fadeIn 0.5s; }
 
-        iframe { border: 3px solid #ffa500; border-radius: 15px; }
+        /* MAPA */
+        iframe { border: 4px solid #13ee55; border-radius: 15px; margin-top: 15px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
     </style>
 </head>
@@ -176,73 +239,114 @@
         
         <section id="sobre">
             <h2>🏢 Sobre a Empresa</h2>
-            <p>A GKALVIN TECH combina a tradição de Scranton com a tecnologia moderna. Focamos em resultados, mesmo que o processo seja um pouco... caótico.</p>
+            <p>A GKALVIN TECH combina a tradição de Scranton com a tecnologia moderna. Focamos em resultados, mesmo que o processo seja um pouco... caótico. Nosso compromisso é com a eficiência burocrática e o café sempre quente.</p>
         </section>
 
         <section id="equipe">
-            <h2>💼 Nossa Equipe</h2>
+            <h2>💼 Nossa Equipe de Vendas</h2>
             <div class="team-grid">
                 <div class="card">
                     <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Michael_Scott_The_Office.jpg" alt="CEO">
                     <h4>Michael Scott</h4>
-                    <p style="color: #13ee55; font-weight: bold;">CEO / Regional Manager</p>
+                    <p style="color: #ffa500; font-weight: bold;">CEO / Regional Manager</p>
+                    <p style="font-style: italic; font-size: 0.9rem; color: #666; margin-top:5px;">"World's Best Boss"</p>
                 </div>
                 <div class="card">
                     <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Dwight_Schrute.jpg" alt="Vendas">
                     <h4>Dwight Schrute</h4>
-                    <p style="color: #ffa500; font-weight: bold;">Sales Associate</p>
+                    <p style="color: #13ee55; font-weight: bold;">Sales Associate</p>
+                    <p style="font-style: italic; font-size: 0.9rem; color: #666; margin-top:5px;">(Assistant to the) Regional Manager</p>
                 </div>
                 <div class="card">
                     <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Jim_Halpert.jpg" alt="Vendas">
                     <h4>Jim Halpert</h4>
-                    <p style="color: #ffa500; font-weight: bold;">Sales Associate</p>
+                    <p style="color: #13ee55; font-weight: bold;">Sales Associate</p>
+                    <p style="font-style: italic; font-size: 0.9rem; color: #666; margin-top:5px;">Especialista em Trotes</p>
                 </div>
             </div>
         </section>
 
         <section id="sistema">
             <div class="system-box">
-                <h2>⚙️ Sistema Interno</h2>
-                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button class="btn-menu" onclick="showContent('dashboard')">Painel</button>
-                    <button class="btn-menu" onclick="showContent('add-employee')">Cadastrar</button>
-                    <button class="btn-menu" onclick="showContent('list-employees')">Lista</button>
+                <h2>⚙️ Sistema Interno GK-RH</h2>
+                
+                <div class="tab-menu">
+                    <button class="btn-tab active-tab" onclick="showContent(event, 'dashboard')">📊 Painel</button>
+                    <button class="btn-tab" onclick="showContent(event, 'add-employee')">➕ Cadastrar</button>
+                    <button class="btn-tab" onclick="showContent(event, 'list-employees')">📋 Lista</button>
                 </div>
 
                 <div id="dashboard" class="content active">
-                    <h3 style="color: #13ee55;">Bem-vindo ao Dashboard Laranja & Verde!</h3>
+                    <h3 style="color: #ffa500;">Bem-vindo ao Painel Laranja & Verde!</h3>
+                    <p style="margin-top: 10px;">Selecione uma opção acima para começar a gerenciar seus "recursos" humanos.</p>
                 </div>
 
                 <div id="add-employee" class="content">
-                    <form onsubmit="event.preventDefault(); alert('Funcionário salvo!');">
-                        <input type="text" placeholder="Nome do Funcionário" style="margin-bottom: 10px;"><br>
+                    <h4>📋 Cadastrar Novo Colaborador</h4>
+                    <form onsubmit="event.preventDefault(); alert('Funcionário salvo no banco de dados (fictício)!');">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome Completo do Funcionário" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Cargo/Função" required>
+                        </div>
                         <button type="submit" class="btn-primary">💾 Salvar Alterações</button>
                     </form>
                 </div>
 
                 <div id="list-employees" class="content">
-                    <table width="100%">
-                        <thead><tr><th>Colaborador</th><th>Status</th></tr></thead>
-                        <tbody><tr><td>Michael Scott</td><td>Ativo</td></tr></tbody>
+                    <h4>📋 Lista de Colaboradores Ativos</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Colaborador</th>
+                                <th>Cargo</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Michael Scott</td>
+                                <td>CEO</td>
+                                <td style="color: green; font-weight: bold;">Ativo</td>
+                            </tr>
+                            <tr>
+                                <td>Dwight Schrute</td>
+                                <td>Vendas</td>
+                                <td style="color: green; font-weight: bold;">Ativo</td>
+                            </tr>
+                            <tr>
+                                <td>Jim Halpert</td>
+                                <td>Vendas</td>
+                                <td style="color: green; font-weight: bold;">Ativo</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </section>
 
         <section id="contato">
-            <h2>📍 Onde estamos</h2>
-            <p style="margin-bottom: 15px;">Scranton Business Park, 1725 Slough Avenue - Scranton, PA</p>
+            <h2>📍 Localização de Scranton</h2>
+            <p>Scranton Business Park, 1725 Slough Avenue - Scranton, PA. Venha nos visitar (trazendo donuts).</p>
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2987.5684365775!2d-75.660146!3d41.41169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDI0JzQyLjEiTiA3NcKwMzknMzYuNSJX!5e0!3m2!1spt-BR!2sbr!4v1647451234567" 
-                width="100%" height="350" loading="lazy">
+                src="http://googleusercontent.com/maps.google.com/3" 
+                width="100%" height="400" loading="lazy" allowfullscreen>
             </iframe>
         </section>
     </div>
 
     <script>
-        function showContent(id) {
+        function showContent(event, id) {
+            // Esconde todos os conteúdos
             document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+            
+            // Remove a classe active de todos os botões
+            document.querySelectorAll('.btn-tab').forEach(b => b.classList.remove('active-tab'));
+            
+            // Mostra o conteúdo atual e adiciona classe ao botão clicado
             document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active-tab');
         }
     </script>
 </body>
